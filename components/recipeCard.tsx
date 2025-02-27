@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardHeader, CardBody, Image } from "@heroui/react";
+import { Card, CardHeader, CardBody, CardFooter, Image } from "@heroui/react";
 // import { useRouter } from "next/navigation";
 
 import { useRouter } from "next-nprogress-bar";
@@ -34,8 +34,8 @@ export default function RecipeCard({
       onPress={() => router.push("/recipes/" + `${id}`)}
     >
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-        <p className="text-tiny uppercase font-bold">Daily Mix</p>
-        <small className="text-default-500">12 Tracks</small>
+        <p className="text-tiny uppercase font-bold">{cuisine}</p>
+        <small className="text-default-500">{difficulty}</small>
         <h4 className="font-bold text-large">{name}</h4>
       </CardHeader>
       <CardBody className="overflow-visible py-2">
@@ -48,6 +48,7 @@ export default function RecipeCard({
           width={270}
         />
       </CardBody>
+      <CardFooter>{mealType}</CardFooter>
     </Card>
   );
 }
