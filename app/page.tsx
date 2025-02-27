@@ -7,7 +7,7 @@ export default async function Home() {
 
   return (
     <section>
-      <h3>Recipes Data</h3>
+      {/*<h3>Recipes Data</h3>*/}
       <AllRecipes recipes={recipes} />
     </section>
   );
