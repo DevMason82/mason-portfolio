@@ -4,10 +4,10 @@ import type { ThemeProviderProps } from "next-themes";
 
 import * as React from "react";
 import { HeroUIProvider } from "@heroui/system";
-// import { useRouter } from "next/navigation";
-import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
-import { useRouter } from "next-nprogress-bar";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { AppProgressProvider as ProgressProvider } from "@bprogress/next";
+// import { useRouter } from "next/router";
+import { useRouter } from "@bprogress/next";
 
 export interface ProvidersProps {
   children: React.ReactNode;
@@ -23,19 +23,20 @@ declare module "@react-types/shared" {
 }
 
 export function Providers({ children, themeProps }: ProvidersProps) {
-  const router = useRouter();
+  // const router = useRouter();
 
   return (
     // <HeroUIProvider navigate={router.push}>
     <HeroUIProvider>
       <NextThemesProvider {...themeProps}>
-        {children}
-        <ProgressBar
+        <ProgressProvider
           shallowRouting
-          color="#FF204E"
-          height="4px"
+          color="#1BFF00"
+          height="6px"
           options={{ showSpinner: false }}
-        />
+        >
+          {children}
+        </ProgressProvider>
       </NextThemesProvider>
     </HeroUIProvider>
   );

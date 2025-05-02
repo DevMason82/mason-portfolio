@@ -52,7 +52,6 @@ const AllRecipes: React.FC<AllRecipesProps> = ({ recipes }) => {
           />
         );
       })}
-      {/*<div>{JSON.stringify(recipes)}</div>*/}
     </section>
   );
 };

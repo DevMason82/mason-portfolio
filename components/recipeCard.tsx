@@ -1,9 +1,7 @@
 "use client";
 
 import { Card, CardHeader, CardBody, CardFooter, Image } from "@heroui/react";
-// import { useRouter } from "next/navigation";
-
-import { useRouter } from "next-nprogress-bar";
+import { useRouter } from "@bprogress/next";
 
 import { Recipe } from "@/model/recipeModel";
 
